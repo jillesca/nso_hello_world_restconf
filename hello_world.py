@@ -56,8 +56,23 @@ def clasify_results(xml_reply: str) -> dict:
 
 
 def print_results(res: dict) -> None:
-    msg = f'NSO deamon status: {res["daemon_status"].upper()}, NSO version: {res["nso_version"]}'
+    deamon_status = res["daemon_status"]
+    msg = f'\nNSO version: {res["nso_version"]}'
+
+    if not valid_deamon_status(deamon_status):
+        msg += f"\nNSO not running. Status: {deamon_status}"
+        print(msg)
+        raise ValueError(msg)
+
+    msg += f"\nNSO deamon running. Status: {deamon_status.upper()}"
     print(msg)
+
+
+def valid_deamon_status(status: str) -> bool:
+    # https://developer.cisco.com/docs/nso/guides/#!nso-system-management/monitoring-nso
+    if "started" in status.lower():
+        return True
+    return False
 
 
 def main() -> None:
