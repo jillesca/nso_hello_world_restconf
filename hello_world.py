@@ -6,7 +6,6 @@ from requests.auth import HTTPBasicAuth
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 BASE_URL = "https://sandbox-nso-1.cisco.com"
-# BASE_URL = "http://sandbox-nso-1.cisco.com"
 USERNAME = "developer"
 PASSWORD = "Services4Ever"
 
