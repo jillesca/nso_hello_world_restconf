@@ -8,7 +8,7 @@ This script can be useful to monitor continously the status of NSO.
 
 For real use, consider using environment variables rather than hardcoding credentials for your NSO instance.
 
-For demo purposes, the script connects to the NSO always-On sandbox, so you can test it right away.
+For demo purposes, the script connects to the [NSO always-On sandbox](https://developer.cisco.com/site/sandbox/), so you can test it right away.
 
 Below are the restconf paths used to get the data.
 
